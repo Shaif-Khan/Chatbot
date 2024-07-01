@@ -1,0 +1,19 @@
+
+<div id="webchat"></div>
+<script src="https://cdn.jsdelivr.net/npm/rasa-webchat@0.11.5/lib/index.min.js"></script>
+<img src="https://c0.wallpaperflare.com/preview/539/217/128/ecommerce-online-store-online-shop-store.jpg">
+<script>
+  WebChat.default.init({
+    selector: "#webchat",
+    initPayload: "/greet",
+    customData: {"language": "en"}, // arbitrary custom data. Stay minimal as this will be added to the socket
+    socketUrl: "http://localhost:5005",
+    socketPath: "/socket.io/",
+    title: "Shopping Bot" , 
+    subtitle: "Serving Humanity.",
+    params: {"storage": "session"} // can be set to "local"  or "session". details in storage section.
+    
+  })
+  
+</script>
+

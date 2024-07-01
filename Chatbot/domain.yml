@@ -1,0 +1,173 @@
+
+
+intents:
+- greet
+- goodbye
+- affirm
+- deny
+- buy_phone_laptop
+- latest_news_phones_laptops
+- mood_great
+- mood_unhappy
+- ask_residence:
+    triggers: action_your_residence
+- give_information
+- budget_available
+- bot_challenge
+- out_of_scope
+- ask_occupation:
+    triggers: action_your_occupation
+
+entities:
+- category
+
+slots:
+  category:
+    type: text
+  ram:
+    type: text
+  budget:
+    type: text
+  battery:
+    type: text
+  camera: 
+    type: text
+  battery_backup:
+    type: text
+  storage_capacity:
+    type: text
+  requested_slot:
+    type: unfeaturized 
+  
+responses:
+  utter_greet:
+  - text: "Welcome 🙏! I'm Your Shopping Bot 😊. I Can Help You With Finding a Phone 📱 or Laptop 💻 and Providing Latest News 📰 For Them!"
+    image: "https://cdn.dribbble.com/users/37530/screenshots/2937858/drib_blink_bot.gif"
+  
+  
+  utter_ask_ram:
+  - text: "How Much GB RAM Are You Looking For?"
+    image: "https://villman.com/product_photos/kvr16n11s8-4.gif"
+
+  utter_ask_camera:
+  - text: "What Megapixel Camera Are You Looking For?"
+    image: "https://upload.wikimedia.org/wikipedia/commons/2/2d/Wikimania2023_Animated_Sticker_Camera.gif"
+
+  utter_ask_battery:
+  - text: "How Much Thousand Mah Battery Capacity Are You Looking For?"
+    image: "https://cdn.dribbble.com/users/57484/screenshots/2071184/charging-battery-animated-gif.gif"
+
+  utter_ask_budget:
+  - text: "Whats your budget?"
+    image: "https://i.pinimg.com/originals/2c/90/78/2c90781fa0774527ccecb868b61184f3.gif"
+
+  utter_wrong_budget:
+  - text: "Please enter the budget in USD and below 4000"
+    
+
+  utter_wrong_ram:
+  - text: "Please enter the correct RAM value"
+
+  utter_wrong_battery:
+  - text: "Please enter the correct value for battery"
+
+  utter_wrong_camera:
+  - text: "Please enter the correct value for camera"
+  
+  utter_ask_battery_backup:
+  - text: "Whats the minimum battery backup you are looking at?"
+    image: "https://i.pinimg.com/originals/c6/f4/85/c6f485b8548e70e4bbfe028a2a38e248.gif"
+
+  utter_ask_storage_capacity:
+  - text: "Whats the storage capacity you are looking for?"
+    image: "https://cdnl.iconscout.com/lottie/premium/thumb/cloud-storage-5634520-4708059.gif"
+
+  utter_wrong_battery_backup:
+  - text: "Please enter the correct value for battery backup (in hours)."
+
+  utter_wrong_storage_capacity:
+  - text: "Please enter the correct capacity in GBs."
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/8eb6ed26-b894-4e19-8960-4db9ed5cc5c5/width=450/00530-471790193-_lora_Cute%20Animals_1_Cute%20Animals%20-%20fantastic%20creature%20anime%20simple%20tiny%20cute%20flaphy%20and%20soft%20pretty%20little%20animal%20ultra%20realist.jpeg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "It Was Nice Talking To You GoodBye"
+    image: "https://media.tenor.com/IQCjkXhbMAAAAAAi/bye-goodbye.gif"
+
+  utter_iamabot:
+  - text: "I am a bot, Developed by Shaif Khan."
+    image: "https://media0.giphy.com/media/iIqmM5tTjmpOB9mpbn/giphy.gif?cid=6c09b952cgfaliig353iqspxsl9xblzmu39hqcohjejq42it&ep=v1_internal_gif_by_id&rid=giphy.gif&ct=g"
+
+  utter_fallback:
+  - buttons:
+    - payload: /buy_phone_laptop{"category":"phone"}
+      title: Buy Phone
+    - payload: /buy_phone_laptop{"category":"laptop"}
+      title: Buy Laptop
+    - payload: /latest_news_phones_laptops{"category":"phone"}
+      title: Mobile News
+    - payload: /latest_news_phones_laptops{"category":"laptop"}
+      title: Laptop News
+    - payload: /goodbye
+      title: Goodbye
+    text: "Sorry! I couldn't get you! Please use one of the following options."
+
+
+  utter_select_phone:
+  - buttons:
+    - payload: /buy_phone_laptop{"category":"phone"}
+      title: Buy Phone
+    - payload: /buy_phone_laptop{"category":"laptop"}
+      title: Buy Laptop
+    - payload: /latest_news_phones_laptops{"category":"phone"}
+      title: Mobile News
+    - payload: /latest_news_phones_laptops{"category":"laptop"}
+      title: Laptop News
+    - payload: /goodbye
+      title: Goodbye
+    text: "Please select what you want to do next."
+  utter_residence:
+  - text: "I live in this app all day long."
+    image: "https://media3.giphy.com/media/llarwdtFqG63IlqUR1/giphy.gif?cid=6c09b952amwgns6u4meildbrx5assu3z5jlnjwhpfxfxhh9u&ep=v1_gifs_search&rid=giphy.gif&ct=g"
+  - text: "This virtual world is my playground. I'm always here."
+    image: "https://mir-s3-cdn-cf.behance.net/project_modules/fs/0711e964706167.5adb0e01445a0.gif"
+  - text: "Right here in this app. whenever you need me"
+    image: "https://cdn.dribbble.com/users/1354693/screenshots/12477509/media/d5065975505f2618a6ffc582987c34dd.gif"
+  
+actions:
+- utter_ask_ram
+- utter_ask_camera
+- utter_ask_battery
+- utter_ask_budget
+- utter_ask_battery_backup
+- utter_ask_storage_capacity
+- utter_wrong_camera
+- utter_wrong_battery
+- utter_wrong_ram
+- utter_wrong_battery_backup
+- utter_wrong_storage_capacity
+- utter_wrong_budget
+- utter_goodbye
+- action_search
+- utter_fallback
+- action_my_fallback
+- action_show_latest_news
+- action_your_occupation
+- utter_select_phone
+- action_your_residence
+- utter_residence
+
+forms:
+- product_search_form
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
