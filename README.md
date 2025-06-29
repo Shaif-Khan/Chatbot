@@ -1,6 +1,9 @@
 🤖 AI Shopping + Mood Chatbot using Rasa, Python & Telegram
 From Concept to Deployment – NLP | Telegram Bot | Intelligent Assistant
 <hr>
+<h1 align="center">🤖 Hi, I'm <span style="color:#4CAF50">Jorie</span> The Bot</h1>
+<h3 align="center">Made with ❤️ by Shaif Khan</h3>
+
 <img src="https://cdn.dribbble.com/users/37530/screenshots/2937858/drib_blink_bot.gif">
 
 
